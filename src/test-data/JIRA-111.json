@@ -1,0 +1,19 @@
+{
+  "description": "Verify demo launch and game functionality on iGaming homepage, including age verification, cookie consent, demo menu, and game modal overlay.",
+  "url": "https://www.igaming.com/",
+  "expectedElements": [
+    "Age verification popup",
+    "I am 18 years or older button",
+    "Cookie consent banner",
+    "Accept All Cookies button",
+    "First game card: 3-Wonders Phoenix 2",
+    "Demo button on 3-Wonders Phoenix 2",
+    "Demo menu with device options",
+    "Play on Desktop option",
+    "Game modal/overlay after demo launch"
+  ],
+  "testTimeout": 40000,
+  "expectedPageTitle": "iGaming",
+  "verifyGamesCount": false,
+  "minGamesExpected": 0
+}
