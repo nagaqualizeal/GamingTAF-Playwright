@@ -1,0 +1,26 @@
+{
+  "description": "Verify Header Links Navigation",
+  "url": "https://www.igaming.com/",
+  "headerLinks": [
+    {
+      "name": "About Us",
+      "urlPath": "/about-us/",
+      "verificationText": "About Us"
+    },
+    {
+      "name": "Career",
+      "urlPath": "/career/",
+      "verificationText": "Career"
+    },
+    {
+      "name": "Contact",
+      "urlPath": "/contact/",
+      "verificationText": "Contact"
+    },
+    {
+      "name": "iGamingCare",
+      "urlPath": "/igamingcare/"
+    }
+  ],
+  "testTimeout": 30000
+}

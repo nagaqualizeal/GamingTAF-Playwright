@@ -1,0 +1,49 @@
+{
+  "description": "Verify Partners UK Online Casinos Top 10 List Navigation",
+  "url": "https://www.igaming.com/",
+  "expectedUrl": "/best-casino-sites/",
+  "pageTitle": "Our Best Online Casino Sites 2026",
+  "heading": "Our List of the Top 10 Online Casinos in the UK",
+  "casinos": [
+    {
+      "name": "Ladbrokes",
+      "description": "Best Online Casino in the UK"
+    },
+    {
+      "name": "Duelz",
+      "description": "Extensive Library & Top New Games"
+    },
+    {
+      "name": "Coral",
+      "description": "Best New Online Casino"
+    },
+    {
+      "name": "Betfred",
+      "description": "Best Casino Site for Table Games"
+    },
+    {
+      "name": "bet365",
+      "description": "Excellent Bonuses and Promotions"
+    },
+    {
+      "name": "Grosvenor",
+      "description": "Top Choice for Bingo Players"
+    },
+    {
+      "name": "Casumo",
+      "description": "Packed with Games from the Best Software Studios"
+    },
+    {
+      "name": "The Grand Ivy",
+      "description": "Ideal Casino for High Rollers"
+    },
+    {
+      "name": "Casimba",
+      "description": "Top Pick for Jackpot Slots"
+    },
+    {
+      "name": "Fitzdares Casino",
+      "description": "Recommended for Mobile Players"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "description": "Verify Professional Help Database Filters for Canada",
+  "url": "https://www.igaming.com/",
+  "igamingcareUrl": "/igamingcare/",
+  "country": "Canada",
+  "language": "English",
+  "formOfHelp": "Personal",
+  "expectedResultsHeading": "Where to Look for Professional Help with Gambling Addiction",
+  "expectedCenters": [
+    "Gambling Support BC",
+    "Responsible Gambling Council (RGC) - Find a Treatment Centre",
+    "Canadian Centre on Substance Use and Addiction (CCSA)",
+    "Gambling: Help and Referral",
+    "Saskatchewan Problem Gambling Helpline"
+  ],
+  "minExpectedResults": 5
+}

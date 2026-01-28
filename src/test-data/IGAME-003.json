@@ -1,0 +1,42 @@
+{
+  "description": "Verify Footer Links Navigation",
+  "url": "https://www.igaming.com/",
+  "footerLinks": [
+    {
+      "name": "About Us",
+      "urlPath": "/about-us/",
+      "verificationText": "About Us"
+    },
+    {
+      "name": "Locations",
+      "urlPath": "/locations/",
+      "verificationHeading": "Portrait Offices"
+    },
+    {
+      "name": "Career",
+      "urlPath": "/career/",
+      "verificationText": "Career"
+    },
+    {
+      "name": "Contact",
+      "urlPath": "/contact/",
+      "verificationText": "Contact"
+    },
+    {
+      "name": "Privacy Policy",
+      "urlPath": "/privacy-policy/",
+      "verificationHeadingPattern": "privacy"
+    },
+    {
+      "name": "Terms",
+      "urlPath": "/terms-conditions/",
+      "verificationHeadingPattern": "terms"
+    },
+    {
+      "name": "Data Protection",
+      "urlPath": "/data-protection/",
+      "verificationHeadingPattern": "data privacy framework|data protection|datenschutz"
+    }
+  ],
+  "testTimeout": 30000
+}

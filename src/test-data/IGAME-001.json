@@ -1,0 +1,14 @@
+{
+  "description": "Verify user can navigate to homepage and verify main elements are displayed",
+  "url": "https://www.igaming.com/",
+  "expectedElements": [
+    "Sign In button",
+    "Games menu",
+    "Promotions menu",
+    "Main content area"
+  ],
+  "testTimeout": 30000,
+  "expectedPageTitle": "iGaming",
+  "verifyGamesCount": true,
+  "minGamesExpected": 5
+}

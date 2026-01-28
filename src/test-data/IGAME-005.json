@@ -1,0 +1,27 @@
+{
+  "description": "Verify Our Offices Links Navigation",
+  "url": "https://www.igaming.com/",
+  "officeLocations": [
+    {
+      "name": "Varna",
+      "verificationHeading": "Varna, Bulgaria"
+    },
+    {
+      "name": "Berlin",
+      "verificationHeading": "Berlin, Germany"
+    },
+    {
+      "name": "Netanya",
+      "verificationHeading": "Netanya, Israel"
+    },
+    {
+      "name": "Amsterdam",
+      "verificationHeading": "Amsterdam"
+    },
+    {
+      "name": "Milan",
+      "verificationHeading": "Milan, Italy"
+    }
+  ],
+  "testTimeout": 30000
+}

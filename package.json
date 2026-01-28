@@ -1,0 +1,43 @@
+{
+  "name": "gaming-taf-playwright",
+  "version": "1.0.0",
+  "description": "Playwright hybrid automation framework for iGaming website testing",
+  "author": "QA Team",
+  "license": "ISC",
+  "scripts": {
+    "test": "playwright test",
+    "test:smoke": "playwright test src/tests/smoke",
+    "test:regression": "playwright test src/tests/regression",
+    "test:single": "playwright test",
+    "test:debug": "playwright test --debug",
+    "test:headless": "playwright test --headed=false",
+    "test:firefox": "playwright test --project=firefox",
+    "test:webkit": "playwright test --project=webkit",
+    "test:mobile": "playwright test --project='Mobile Chrome' --project='Mobile Safari'",
+    "test:all-browsers": "playwright test --project=chromium --project=firefox --project=webkit",
+    "test:parallel": "playwright test --workers=4",
+    "test:serial": "playwright test --workers=1",
+    "test:retry": "playwright test --retries=2",
+    "report": "playwright show-report",
+    "report:open": "start playwright-report/index.html || open playwright-report/index.html",
+    "codegen": "playwright codegen https://www.igaming.com/",
+    "install:browsers": "playwright install",
+    "install:deps": "playwright install-deps"
+  },
+  "keywords": [
+    "playwright",
+    "automation",
+    "testing",
+    "e2e",
+    "igaming"
+  ],
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+}

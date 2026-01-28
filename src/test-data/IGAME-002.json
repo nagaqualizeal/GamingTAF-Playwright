@@ -1,0 +1,17 @@
+{
+  "description": "Verify sign in page loads and displays required fields",
+  "url": "https://www.igaming.com/",
+  "signInPageUrl": "https://www.igaming.com/signin",
+  "expectedElements": [
+    "Email input field",
+    "Password input field",
+    "Sign In button",
+    "Forgot Password link",
+    "Sign Up link"
+  ],
+  "testTimeout": 30000,
+  "validEmail": "testuser@example.com",
+  "validPassword": "TestPassword123",
+  "invalidEmail": "invalid-email",
+  "invalidPassword": "wrongpass"
+}
