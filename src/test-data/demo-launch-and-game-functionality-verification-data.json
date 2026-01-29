@@ -1,0 +1,41 @@
+{
+  "homepageUrls": [
+    "https://igaming.example.com/",
+    "https://igaming.example.com/home",
+    "https://igaming.example.com/en"
+  ],
+  "demoGameModal": {
+    "deviceOptions": [
+      "desktop",
+      "mobile",
+      "tablet"
+    ],
+    "expectedModalTitle": "Play Demo Game",
+    "expectedOptions": [
+      "Play on Desktop",
+      "Play on Mobile",
+      "Play on Tablet"
+    ]
+  },
+  "edgeCases": {
+    "unsupportedDevice": "smart-tv",
+    "invalidModalState": null,
+    "homepageDownUrl": "https://igaming.example.com/404"
+  },
+  "gameLaunch": {
+    "validGameIds": [
+      "game123",
+      "game456"
+    ],
+    "invalidGameIds": [
+      "",
+      "invalid",
+      null
+    ]
+  },
+  "expectedResults": {
+    "homepageLoad": "Homepage loaded successfully",
+    "modalVisible": true,
+    "deviceOptionsDisplayed": true
+  }
+}
