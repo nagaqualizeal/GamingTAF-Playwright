@@ -1,0 +1,46 @@
+{
+  "homepageTitle": "Our Games - Light & Wonder",
+  "firstGameCard": {
+    "displayName": "3-Wonders Phoenix 2"
+  },
+  "popups": {
+    "ageVerification": {
+      "shouldAppear": true,
+      "closeAction": "clickButton"
+    },
+    "cookieConsent": {
+      "shouldAppear": true,
+      "closeAction": "clickButton"
+    }
+  },
+  "demoMenu": {
+    "shouldAppear": true,
+    "options": [
+      "Desktop",
+      "Tablet",
+      "Mobile"
+    ]
+  },
+  "gameModal": {
+    "shouldOpen": true
+  },
+  "edgeCases": {
+    "homepageTitle": [
+      "Our Games - Light & Wonder", 
+      "OUR GAMES - LIGHT & WONDER", 
+      "our games - light & wonder", 
+      "Our Games - Light and Wonder"
+    ],
+    "firstGameCard": [
+      "3-Wonders Phoenix 2", 
+      "3-wonders phoenix 2", 
+      "3-Wonders Phoenix II"
+    ],
+    "demoMenuOptions": [
+      [],
+      ["Desktop"],
+      ["Desktop", "Tablet"],
+      ["Desktop", "Tablet", "Mobile"]
+    ]
+  }
+}
