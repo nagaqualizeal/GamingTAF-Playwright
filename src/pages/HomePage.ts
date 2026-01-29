@@ -215,4 +215,54 @@ export class HomePage extends BasePage {
     const element = this.page.getByText(text).first();
     return await this.isElementVisible(element);
   }
+
+  /**
+   * Complete workflow: Accept age consent, accept cookies, verify first game card, open demo menu, play on desktop
+   * Steps:
+   * 1. Accept age consent popup if present
+   * 2. Accept all cookies if present
+   * 3. Verify the first game card displays the expected game name
+   * 4. Click the Demo button on the first game card
+   * 5. Click 'Play on Desktop' in the demo tooltip
+   * 6. Assert the game modal/overlay appears
+   *
+   * @param expectedGameName The expected name of the first game card (e.g., '3-Wonders Phoenix 2')
+   * @returns Promise<boolean> indicating if the workflow succeeded
+   */
+  async launchDemoAndVerifyGameModal(expectedGameName: string): Promise<boolean> {
+    // Step 1: Accept age consent popup if present
+    const ageConsentButton = this.page.locator("a[data-behaviour='age-consent-btn-yes']").first();
+    if (await ageConsentButton.isVisible({ timeout: 3000 }).catch(() => false)) {
+      await this.click(ageConsentButton);
+      await this.page.waitForTimeout(500); // Wait for popup to close
+    }
+
+    // Step 2: Accept all cookies if present (reuse existing method)
+    await this.acceptCookiesIfPresent();
+
+    // Step 3: Verify the first game card displays the expected game name
+    const firstGameCard = this.gameCards.first();
+    const gameCardTitle = firstGameCard.locator('text=' + expectedGameName);
+    const isGameNameVisible = await gameCardTitle.isVisible({ timeout: 5000 }).catch(() => false);
+    if (!isGameNameVisible) {
+      return false;
+    }
+
+    // Step 4: Click the Demo button on the first game card
+    const demoButton = firstGameCard.locator("button.game-card__view.button.button--solid").first();
+    await this.scrollToElement(demoButton);
+    await this.click(demoButton);
+    // Wait for the demo tooltip to appear
+    const playOnDesktopTooltip = this.page.locator("div.game-card__view-tooltip-demo--desktop").first();
+    await playOnDesktopTooltip.waitFor({ state: "visible", timeout: 5000 });
+
+    // Step 5: Click 'Play on Desktop' in the demo tooltip
+    await this.click(playOnDesktopTooltip);
+
+    // Step 6: Assert the game modal/overlay appears (wait for overlay/modal to be visible)
+    // TODO: Replace with actual modal/overlay locator if available
+    const gameModalOverlay = this.page.locator("div[role='dialog'], .game-modal, .modal-overlay").first();
+    const modalVisible = await gameModalOverlay.isVisible({ timeout: 10000 }).catch(() => false);
+    return modalVisible;
+  }
 }

@@ -1,0 +1,16 @@
+{
+  "description": "Verify demo launch and game functionality for '3-Wonders Phoenix 2' including age consent, cookie acceptance, and device options.",
+  "url": "https://www.igaming.com/",
+  "expectedElements": [
+    "Age Consent Button",
+    "Accept All Cookies Button",
+    "First game card displays '3-Wonders Phoenix 2'",
+    "Demo Button",
+    "Play on Desktop Tooltip",
+    "Play on Mobile Tooltip"
+  ],
+  "testTimeout": 40000,
+  "expectedPageTitle": "iGaming",
+  "verifyGamesCount": false,
+  "minGamesExpected": 0
+}
