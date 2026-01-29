@@ -215,4 +215,56 @@ export class HomePage extends BasePage {
     const element = this.page.getByText(text).first();
     return await this.isElementVisible(element);
   }
+
+  /**
+   * Complete workflow: Accept age consent, accept cookies, verify first game card, launch demo, and play on desktop.
+   * Returns true if all steps succeed, false otherwise.
+   */
+  async launchDemoAndVerifyGameModal(): Promise<boolean> {
+    // Step 2: Accept age verification if present
+    const ageConsentButton = this.page.locator("a[data-behaviour='age-consent-btn-yes']").first();
+    try {
+      if (await ageConsentButton.isVisible({ timeout: 5000 })) {
+        await this.click(ageConsentButton);
+      }
+    } catch (error) {
+      // Age consent popup not present
+    }
+
+    // Step 3: Accept cookies if present (reuse existing method)
+    await this.acceptCookiesIfPresent();
+
+    // Step 4: Verify first game card displays "3-Wonders Phoenix 2"
+    const firstGameCard = this.page.locator('[class*="game-card"], [data-testid*="game"]').first();
+    const gameTitleLocator = firstGameCard.locator('text=3-Wonders Phoenix 2');
+    try {
+      await gameTitleLocator.waitFor({ state: 'visible', timeout: 10000 });
+    } catch (error) {
+      return false;
+    }
+
+    // Step 5: Click the "Demo" button on the first game card
+    const demoButton = firstGameCard.locator('button.game-card__view.button.button--solid').first();
+    await this.scrollToElement(demoButton);
+    await this.click(demoButton);
+
+    // Step 6: Wait for demo menu and click "Play on Desktop"
+    const playOnDesktopOption = this.page.locator('div.game-card__view-tooltip-demo--desktop').first();
+    try {
+      await playOnDesktopOption.waitFor({ state: 'visible', timeout: 5000 });
+      await this.click(playOnDesktopOption);
+    } catch (error) {
+      return false;
+    }
+
+    // Step 7: Verify that a game modal/overlay opens (assume overlay is present if an iframe or modal appears)
+    // Placeholder: Adjust selector if actual modal/iframe locator is known
+    const gameModalOrOverlay = this.page.locator('iframe, .game-modal, .modal-overlay').first();
+    try {
+      await gameModalOrOverlay.waitFor({ state: 'visible', timeout: 10000 });
+      return true;
+    } catch (error) {
+      return false;
+    }
+  }
 }
